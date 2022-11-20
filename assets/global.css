@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Reggae One';
+    src: url('./fonts/ReggaeOne-Regular.ttf'); /* IE9 Compat Modes */
+    url('./fonts/ReggaeOne-Regular.ttf') format('truetype'), /* Modern Browsers */
+    url('./fonts/ReggaeOne-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+*{
+    font-family: 'Reggae One';
+}
