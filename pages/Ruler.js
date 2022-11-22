@@ -25,6 +25,9 @@ import { PixelRatio } from "react-native";
 import styled from 'styled-components';
 import { Dimensions } from 'react-native';
 
+const { deviceWidth } = Dimensions.get('screen');
+const { deviceHeight } = Dimensions.get('screen');
+
 const Boca = styled.View`
     width: 85px;
     height: 60px;
@@ -48,10 +51,16 @@ export default function Ruler() {
 
     return (
         <Stack bg="#30BCED" pt={10} flex={1} direction={"column"}>
+            <HStack space={3}>
+                <VStack flex={1} space={1}>
+                    <Box h={`1px`} w={'100%'} bg='white'></Box>
+                    <Box h={1} w={'50%'} bg='white'></Box>
+                    <Box h={1} w={'100%'} bg='white'></Box>
+                    <Box h={1} w={'100%'} bg='white'></Box>
+                </VStack>
+                <Text flex={1}>22</Text>
+            </HStack>
             <Box h={`53px`} w={'100%'} bg='white'></Box>
-            <Stack><Text>{PixelRatio.get()}</Text></Stack>
-            <Box h={`91px`} w={'100%'} bg='white'></Box>
-
             <Stack><Text>{Dimensions.get('window').height}</Text></Stack>
             <Stack><Text>{PixelRatio.get()}</Text></Stack>
             <Stack></Stack>
