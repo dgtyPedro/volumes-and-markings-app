@@ -6,8 +6,8 @@ import {
     Center,
     Heading,
     Switch,
-    useColorMode,
     Stack,
+    useColorMode,
     NativeBaseProvider,
     extendTheme,
     VStack,
@@ -22,9 +22,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export default function Volume() {
+export default function Results() {
     return (
-        <Stack bg="#FC5130" flex={1}>
+        <Stack bg="#38369A" flex={1}>
 
         </Stack>
     )

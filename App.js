@@ -16,9 +16,9 @@ import NativeBaseIcon from "./components/NativeBaseIcon";
 import { Platform } from "react-native";
 import Home from "./pages/Home";
 import { useFonts } from 'expo-font';
-import Ruler from "./pages/Ruler";
-import Volume from "./pages/Volume";
-import Angle from "./pages/Angle";
+import Format from "./pages/Format";
+import Adjust from "./pages/Adjust";
+import Results from "./pages/Results";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import './assets/global.css'
@@ -28,7 +28,6 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   return (
-
           <NativeBaseProvider>
             <NavigationContainer>
               <Stack.Navigator screenOptions={{
@@ -36,9 +35,9 @@ export default function App() {
               }}
               >
                 <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="Ruler" component={Ruler} />
-                <Stack.Screen name="Volume" component={Volume} />
-                <Stack.Screen name="Angle" component={Angle} />
+                <Stack.Screen name="Format" component={Format} />
+                <Stack.Screen name="Adjust" component={Adjust} />
+                <Stack.Screen name="Results" component={Results} />
               </Stack.Navigator>
             </NavigationContainer>
           </NativeBaseProvider>
