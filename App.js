@@ -19,6 +19,8 @@ import { useFonts } from 'expo-font';
 import Format from "./pages/Format";
 import Adjust from "./pages/Adjust";
 import Results from "./pages/Results";
+import Cube from "./pages/Cube";
+import Cylinder from "./pages/Cylinder";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import './assets/global.css'
@@ -26,6 +28,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function App() {
 
   const Stack = createNativeStackNavigator();
+
+  const [loaded] = useFonts({
+    ReggaeOne: require('./assets/fonts/ReggaeOne-Regular.ttf'),
+  });
+  if (!loaded) {
+    return null;
+  }
 
   return (
           <NativeBaseProvider>
@@ -38,6 +47,8 @@ export default function App() {
                 <Stack.Screen name="Format" component={Format} />
                 <Stack.Screen name="Adjust" component={Adjust} />
                 <Stack.Screen name="Results" component={Results} />
+                <Stack.Screen name="Cylinder" component={Cylinder} />
+                <Stack.Screen name="Cube" component={Cube} />
               </Stack.Navigator>
             </NavigationContainer>
           </NativeBaseProvider>
