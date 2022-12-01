@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
     Text,
     Link,
@@ -24,11 +24,20 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import {useFonts} from "expo-font";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const screen = Dimensions.get("screen");
 
 export default function Results({navigation}) {
-    const spacing = 100;
+    const [spacing, setSpacing] = useState(100);
+    useEffect(() => {
+        const getSpacing = async() => {
+            const spacing_rn = await AsyncStorage.getItem('@espacamento_rn')
+            console.log(spacing_rn)
+            setSpacing(parseInt(spacing_rn))
+        }
+        getSpacing()
+    }, [])
     const [loaded] = useFonts({
         Courgette: require('../assets/fonts/Courgette-Regular.ttf'),
     });
@@ -64,7 +73,6 @@ export default function Results({navigation}) {
                                 </Text>
                                 <View style={{width: 100, height: 3, backgroundColor: 'white', marginTop: spacing}}></View>
                             </VStack>
-
                         })
                     }
                 </VStack>

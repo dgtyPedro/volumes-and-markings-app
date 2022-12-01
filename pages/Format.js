@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {
     Text,
     Link,
@@ -25,6 +25,7 @@ import { PixelRatio, Button } from "react-native";
 import styled from 'styled-components';
 import { Dimensions, TouchableOpacity } from 'react-native';
 import {useFonts} from "expo-font";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { deviceWidth } = Dimensions.get('screen');
 const { deviceHeight } = Dimensions.get('screen');
@@ -46,6 +47,23 @@ export default function Format({navigation}) {
     const [loaded] = useFonts({
         Courgette: require('../assets/fonts/Courgette-Regular.ttf'),
     });
+
+    useEffect(() => {
+        const getData = async() => {
+            try {
+                const value = await AsyncStorage.getItem('@base_pxr')
+                if(value !== null) {
+                    console.log(value)
+                }
+            } catch(e) {
+                // error reading value
+            }
+        }
+        getData()
+    }, [])
+
+
+
     if (!loaded) {
         return null;
     }
