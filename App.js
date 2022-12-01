@@ -21,6 +21,7 @@ import Adjust from "./pages/Adjust";
 import Results from "./pages/Results";
 import Cube from "./pages/Cube";
 import Cylinder from "./pages/Cylinder";
+import About from "./pages/About";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import './assets/global.css'
@@ -48,6 +49,7 @@ export default function App() {
                 <Stack.Screen name="Adjust" component={Adjust} />
                 <Stack.Screen name="Results" component={Results} />
                 <Stack.Screen name="Cylinder" component={Cylinder} />
+                <Stack.Screen name="About" component={About} />
                 <Stack.Screen name="Cube" component={Cube} />
               </Stack.Navigator>
             </NavigationContainer>

@@ -73,24 +73,24 @@ export default function Format({navigation}) {
             <VStack px={5} space={2} bg="#46ACC2" pt={10} pb={5} borderBottomLeftRadius={20} borderBottomRightRadius={20}>
                 <HStack justifyContent="space-between">
                     <TouchableOpacity onPress={() => navigation.goBack()}>
-                        <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>Voltar</Text>
+                        <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>Go Back</Text>
                     </TouchableOpacity>
                     <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>2/3</Text>
                 </HStack>
-                <Text color={"white"} textAlign={"center"} fontSize={28} style={{ fontFamily: 'Courgette'}}>Formato</Text>
-                <Text color={"white"} textAlign={"center"} fontSize={18} style={{ fontFamily: 'Courgette'}}>Escolher o formato do recipiente.</Text>
+                <Text color={"white"} textAlign={"center"} fontSize={28} style={{ fontFamily: 'Courgette'}}>Format</Text>
+                <Text color={"white"} textAlign={"center"} fontSize={18} style={{ fontFamily: 'Courgette'}}>Choose the container format.</Text>
             </VStack>
             <VStack space={3} justifyContent="center" alignItems="center" bg="white" flex={1}>
                 <TouchableOpacity onPress={() => navigation.navigate('Cube')}>
                     <Center style={{width: 200, height: 200}} bg="#06A77D" rounded="md" shadow={3}>
                         <MaterialCommunityIcons name="cube" size={80} color="white" />
-                        <Text color="white" fontSize={40}>Cubóide</Text>
+                        <Text color="white" fontSize={40}>Cuboid</Text>
                     </Center>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Cylinder')}>
                     <Center style={{width: 200, height: 200}} bg="#38369A" rounded="md" shadow={3}>
                         <MaterialCommunityIcons name="cylinder" size={80} color="white" />
-                        <Text color="white" textAlign="center" fontSize={40}>Cilindro</Text>
+                        <Text color="white" textAlign="center" fontSize={40}>Cylinder</Text>
                     </Center>
                 </TouchableOpacity>
             </VStack>

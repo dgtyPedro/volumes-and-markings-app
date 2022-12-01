@@ -40,7 +40,7 @@ export default function Adjust({navigation}) {
                 navigation.navigate('Format')
             }
             else{
-                alert('Adicione uma largura')
+                alert('Fill the width field')
             }
         } catch (e) {
             // saving error
@@ -53,16 +53,16 @@ export default function Adjust({navigation}) {
                 <HStack justifyContent="space-between">
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Text color={"white"} textAlign={"right"} fontSize={20}
-                              style={{fontFamily: 'Courgette'}}>Voltar</Text>
+                              style={{fontFamily: 'Courgette'}}>Go Back</Text>
                     </TouchableOpacity>
                     <Text color={"white"} textAlign={"right"} fontSize={20} style={{fontFamily: 'Courgette'}}>1/3</Text>
                 </HStack>
-                <Text color={"white"} textAlign={"center"} fontSize={24} style={{fontFamily: 'Courgette'}}>Regular
+                <Text color={"white"} textAlign={"center"} fontSize={24} style={{fontFamily: 'Courgette'}}>Adjust
                     APP</Text>
-                <Text color={"white"} textAlign={"center"} fontSize={18} style={{fontFamily: 'Courgette'}}>Nessa etapa
-                    iremos regular a proporção de medidas para a tela de seu celular.</Text>
-                <Text color={"white"} textAlign={"center"} fontSize={18} style={{fontFamily: 'Courgette'}}>Com uma
-                    régua, meça a largura do quadrado abaixo.</Text>
+                <Text color={"white"} textAlign={"center"} fontSize={18} style={{fontFamily: 'Courgette'}}>At this stage
+                    we will regulate the proportion of measurements for your cellphone screen.</Text>
+                <Text color={"white"} textAlign={"center"} fontSize={18} style={{fontFamily: 'Courgette'}}>With a
+                    ruler, measure the width of the square below.</Text>
             </VStack>
             <VStack space={5}>
                 <HStack space={2} alignItems={"center"} justifyContent={"center"}>
@@ -76,14 +76,14 @@ export default function Adjust({navigation}) {
                         width: 130,
                         borderBottomColor: 'white',
                         fontSize: 16
-                    }} placeholder="Largura (cm)" placeholderTextColor="white" keyboardType="numeric"
+                    }} placeholder="Width (cm)" placeholderTextColor="white" keyboardType="numeric"
                                value={inputValue}
                                onChangeText={text => setInputValue(text)}/>
                 </HStack>
             </VStack>
             <TouchableOpacity onPress={() => storeData()}>
                 <Text textAlign={"center"} fontSize={24} p={2} bg={"white"} w={40} margin={"auto"} borderRadius={10}
-                      color={"#46ACC2"}>Avançar</Text>
+                      color={"#46ACC2"} fontFamily={'Courgette'}>Next</Text>
             </TouchableOpacity>
         </VStack>
     )

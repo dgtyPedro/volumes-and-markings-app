@@ -41,8 +41,8 @@ export default function Home({navigation}) {
     return (
         <Stack bg={"white"} flex={1} justifyContent={"space-between"} pt={10}>
             <VStack alignItems="center" pt={5}>
-                <Text style={{fontFamily: 'Courgette'}} fontSize={30}>Medir Volumes</Text>
-                <Text style={{fontFamily: 'Courgette'}} fontSize={12}>Made By Pedro Gabriel</Text>
+                <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} fontSize={30}>Measure Volumes and Show Markings</Text>
+                <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} fontSize={12}>Made By Pedro Gabriel</Text>
             </VStack>
             <VStack mb={10} justifyContent={"center"} alignItems={"center"} borderRadius={10}>
                 {/*<Text textAlign="center" color="#303036" fontSize={30}>Medir Volume</Text>*/}
@@ -50,34 +50,40 @@ export default function Home({navigation}) {
                                   style={{backgroundColor: "#46ACC2", width: 200, height: 200, display: "flex",
                                       justifyContent: "center", alignItems: "center", margin: "auto", textAlign: "center", borderRadius: 20}}>
                     <MaterialCommunityIcons name="cube-outline" color="white" size={70}/>
-                    <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={30}>Iniciar</Text>
+                    <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={30}>Start</Text>
                 </TouchableOpacity>
             </VStack>
-            <HStack justifyContent="space-between" bg="#46ACC2" borderTopLeftRadius={20} borderTopRightRadius={20}>
-                <TouchableOpacity>
-                    <Center h="20" w="20" rounded="md">
-                        <MaterialCommunityIcons name="advertisements" size={24} color="white"/>
-                        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>Ver Ad</Text>
-                    </Center>
-                </TouchableOpacity>
-                <TouchableOpacity>
+            <HStack justifyContent="space-between" bg="#46ACC2" borderTopLeftRadius={20} borderTopRightRadius={20} p={1}>
+                {/*<TouchableOpacity>*/}
+                {/*    <Center h="20" w="20" rounded="md">*/}
+                {/*        <MaterialCommunityIcons name="advertisements" size={24} color="white"/>*/}
+                {/*        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>Ver Ad</Text>*/}
+                {/*    </Center>*/}
+                {/*</TouchableOpacity>*/}
+                <TouchableOpacity onPress={() => alert('Coming soon')}>
                     <Center h="20" w="20" rounded="md">
                         <Entypo name="language" size={24} color="white"/>
-                        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>Línguas</Text>
+                        <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} color="white" fontSize={16}>Languages</Text>
                     </Center>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => alert('Coming soon')}>
+                    <Center h="20" w="20" rounded="md">
+                        <MaterialCommunityIcons name="tape-measure" size={24} color="white" />
+                        <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} color="white" fontSize={16}>Units</Text>
+                    </Center>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('About')}>
                     <Center h="20" w="20" rounded="md">
                         <AntDesign name="questioncircleo" color="white" size={24}/>
-                        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>Sobre</Text>
+                        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>About</Text>
                     </Center>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Center h="20" w="20" rounded="md">
-                        <FontAwesome5 name="store-alt" size={24} color="white"/>
-                        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>Loja</Text>
-                    </Center>
-                </TouchableOpacity>
+                {/*<TouchableOpacity>*/}
+                {/*    <Center h="20" w="20" rounded="md">*/}
+                {/*        <FontAwesome5 name="store-alt" size={24} color="white"/>*/}
+                {/*        <Text style={{fontFamily: 'Courgette'}} color="white" fontSize={16}>Loja</Text>*/}
+                {/*    </Center>*/}
+                {/*</TouchableOpacity>*/}
             </HStack>
         </Stack>
     )

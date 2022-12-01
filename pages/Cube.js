@@ -42,7 +42,7 @@ export default function Cube({navigation}) {
             await AsyncStorage.setItem('@espacamento_rn', JSON.stringify(espacamentorn))
             navigation.navigate('Results')
         }else{
-            alert('Complete todos os valores')
+            alert('Fill all values')
         }
     }
 
@@ -50,14 +50,14 @@ export default function Cube({navigation}) {
         <VStack bg="#06A77D" flex={1} pt={10} space={10}>
             <HStack justifyContent="space-between" flex={1} px={5}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>Voltar</Text>
+                    <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>Go Back</Text>
                 </TouchableOpacity>
                 <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>3/3</Text>
             </HStack>
             <VStack flex={1} px={5}>
                 <HStack flex={1} alignItems={"center"} space={2}>
                     <FontAwesome name="arrows-h" size={18} color="white" />
-                    <Text color="white" fontSize={30} fontFamily={"Courgette"}>Largura: </Text>
+                    <Text color="white" fontSize={30} fontFamily={"Courgette"}>Width: </Text>
                     <TextInput
                         value={largura}
                         onChangeText={number => setLargura(number)}
@@ -68,7 +68,7 @@ export default function Cube({navigation}) {
                 </HStack>
                 <HStack flex={1} alignItems={"center"} space={2}>
                     <FontAwesome name="arrows-v" size={18} color="white" />
-                    <Text color="white" fontSize={30} fontFamily={"Courgette"}>Altura: </Text>
+                    <Text color="white" fontSize={30} fontFamily={"Courgette"}>Height: </Text>
                     <TextInput
                         value={altura}
                         onChangeText={number => setAltura(number)}
@@ -77,7 +77,7 @@ export default function Cube({navigation}) {
                 </HStack>
                 <HStack flex={1} alignItems={"center"} space={2}>
                     <AntDesign name="arrowsalt" size={18} color="white" />
-                    <Text color="white" fontSize={30} fontFamily={"Courgette"}>Profundidade:</Text>
+                    <Text color="white" fontSize={30} fontFamily={"Courgette"}>Depth:</Text>
                     <TextInput
                         value={profundidade}
                         onChangeText={number => setProfundidade(number)}
@@ -89,7 +89,7 @@ export default function Cube({navigation}) {
             <VStack flex={1} justifyContent={"flex-end"} pb={5}>
                 <TouchableOpacity onPress={() => goToResults()}>
                     <Text textAlign={"center"} fontSize={24} p={2} bg={"white"} w={40} margin={"auto"} borderRadius={10}
-                          color={"#06A77D"}>Finalizar</Text>
+                          color={"#06A77D"} fontFamily={'Courgette'}>Finish</Text>
                 </TouchableOpacity>
             </VStack>
         </VStack>
