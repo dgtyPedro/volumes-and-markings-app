@@ -33,11 +33,14 @@ export default function Cylinder({navigation}) {
         if(diametro && diametro > 0 && altura && altura > 0){
             const base_pxr = await AsyncStorage.getItem('@base_pxr')
             const volumeTotal = 3.14159265359 * ((diametro * 0.01)/2) * ((diametro * 0.01)/2) * (altura * 0.01)
-            console.log(volumeTotal)
             const litragem = volumeTotal * 1000
-            console.log(litragem)
             const espacamentoirl = (altura * 0.05) / litragem
-            console.log(espacamentoirl)
+            if(espacamentoirl < 0.2){
+                return alert('The spacing between the marks is too small, the application was unable to render the markings. Measure a smaller container.')
+            }
+            if(espacamentoirl < 0.4){
+                alert('The spacing between the marks is small, rendering problems may occur.')
+            }
             const espacamentorn = Math.round((espacamentoirl*100)/base_pxr)
             await AsyncStorage.setItem('@espacamento_rn', JSON.stringify(espacamentorn))
             navigation.navigate('Results')

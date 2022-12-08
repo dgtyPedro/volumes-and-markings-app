@@ -33,7 +33,6 @@ export default function Results({navigation}) {
     useEffect(() => {
         const getSpacing = async() => {
             const spacing_rn = await AsyncStorage.getItem('@espacamento_rn')
-            console.log(spacing_rn)
             setSpacing(parseInt(spacing_rn))
         }
         getSpacing()
@@ -50,7 +49,7 @@ export default function Results({navigation}) {
             <HStack>
                 <VStack flexDirection={"column-reverse"}>
                     {
-                        Array.from({length: 21}, (_, i) => i * 50).map((i) => {
+                        Array.from({length: 210}, (_, i) => i * 50).map((i) => {
                             if(i === 0){
                                 return <VStack key={i}>
                                     <TouchableOpacity onPress={()=> navigation.navigate('Home')}>

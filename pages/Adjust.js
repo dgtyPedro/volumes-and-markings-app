@@ -35,7 +35,6 @@ export default function Adjust({navigation}) {
     const storeData = async () => {
         try {
             if(inputValue && inputValue > 0){
-                console.log(inputValue)
                 await AsyncStorage.setItem('@base_pxr', inputValue)
                 navigation.navigate('Format')
             }

@@ -52,9 +52,6 @@ export default function Format({navigation}) {
         const getData = async() => {
             try {
                 const value = await AsyncStorage.getItem('@base_pxr')
-                if(value !== null) {
-                    console.log(value)
-                }
             } catch(e) {
                 // error reading value
             }
