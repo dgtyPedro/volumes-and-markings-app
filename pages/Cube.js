@@ -40,7 +40,7 @@ export default function Cube({navigation}) {
             const espacamentoirl = (altura * 0.05) / litragem
             console.log(espacamentoirl)
             if(espacamentoirl < 0.2){
-                return alert('The spacing between the marks is too small, the application was unable to render the markings. Measure a smaller container.')
+                return alert('The spacing between the marks is too small, the application was unable to render it. Measure a smaller container.')
             }
             if(espacamentoirl < 0.4){
                 alert('The spacing between the marks is small, rendering problems may occur.')
