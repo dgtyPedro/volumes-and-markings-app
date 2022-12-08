@@ -39,9 +39,9 @@ export default function Home({navigation}) {
         return null;
     }
     return (
-        <Stack bg={"white"} flex={1} justifyContent={"space-between"} pt={10}>
-            <VStack alignItems="center" pt={5}>
-                <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} fontSize={30}>Measure Volumes and Show Markings</Text>
+        <Stack bg={"white"} flex={1} justifyContent={"space-between"}>
+            <VStack alignItems="center" px={5} py={2}>
+                <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} fontSize={30}>Measure Volume and Show Markings</Text>
                 <Text style={{fontFamily: 'Courgette', textAlign: 'center'}} fontSize={12}>Made By Pedro Gabriel</Text>
             </VStack>
             <VStack mb={10} justifyContent={"center"} alignItems={"center"} borderRadius={10}>

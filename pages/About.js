@@ -32,7 +32,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function About({navigation}) {
 
     return (
-        <VStack bg="white" flex={1} space={15} pt={10} px={1} pb={5} flex={1}>
+        <VStack bg="white" flex={1} space={15} px={5} py={2} flex={1}>
             <HStack justifyContent="space-between">
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Text color={"#46ACC2"} textAlign={"right"} fontSize={20}
@@ -44,7 +44,7 @@ export default function About({navigation}) {
                       style={{fontFamily: 'Courgette'}}>About</Text>
                 <VStack justifyContent={"space-between"} flex={1}>
                     <Text color={"#46ACC2"} textAlign={"justify"} fontSize={18} style={{fontFamily: 'Courgette'}}>
-                        At Measure Volumes and Show Markings you have a volumetric measuring and marking device in your
+                        At Measure Volume and Show Markings you have a volumetric measuring and marking device in your
                         pocket. When adding the measurements of the container in the application, its entire volumetric
                         proportion is calculated, being able to make precise measurements without the need for a
                         measuring

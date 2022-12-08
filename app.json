@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "my-ruler",
+    "name": "Measure Volume & Show Markings",
     "slug": "my-ruler",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#46ACC2"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,12 +21,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#46ACC2"
+      },
+      "package": "com.dooguitryx.volumesandmarkings"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4ca6ac5c-6068-412e-a031-7ba4d5293b85"
+      }
     }
   }
 }

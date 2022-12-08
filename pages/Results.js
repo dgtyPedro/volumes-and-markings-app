@@ -46,7 +46,7 @@ export default function Results({navigation}) {
     }
 
     return (
-        <VStack bg="#46ACC2" flex={1} pt={10} flexDirection={"column-reverse"}>
+        <VStack bg="#46ACC2" flex={1} flexDirection={"column-reverse"}>
             <HStack>
                 <VStack flexDirection={"column-reverse"}>
                     {

@@ -47,8 +47,8 @@ export default function Cube({navigation}) {
     }
 
     return (
-        <VStack bg="#06A77D" flex={1} pt={10} space={10}>
-            <HStack justifyContent="space-between" flex={1} px={5}>
+        <VStack bg="#06A77D" flex={1} space={10}>
+            <HStack justifyContent="space-between" flex={1} px={5} py={2}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>Go Back</Text>
                 </TouchableOpacity>

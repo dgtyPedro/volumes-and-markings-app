@@ -70,7 +70,7 @@ export default function Format({navigation}) {
 
     return (
         <Stack display={"flex"} flex={1} bg={"white"}>
-            <VStack px={5} space={2} bg="#46ACC2" pt={10} pb={5} borderBottomLeftRadius={20} borderBottomRightRadius={20}>
+            <VStack px={5} py={2} space={2} bg="#46ACC2" pb={5} borderBottomLeftRadius={20} borderBottomRightRadius={20}>
                 <HStack justifyContent="space-between">
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Text color={"white"} textAlign={"right"} fontSize={20} style={{ fontFamily: 'Courgette'}}>Go Back</Text>
@@ -94,6 +94,6 @@ export default function Format({navigation}) {
                     </Center>
                 </TouchableOpacity>
             </VStack>
-    </Stack>
+        </Stack>
     )
 }

@@ -48,8 +48,8 @@ export default function Adjust({navigation}) {
     }
 
     return (
-        <VStack bg="#46ACC2" flex={1} space={15} justifyContent={"space-around"} pt={5}>
-            <VStack px={5} space={2}>
+        <Stack bg="#46ACC2" flex={1} space={15}>
+            <VStack px={5} py={2} space={2}>
                 <HStack justifyContent="space-between">
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Text color={"white"} textAlign={"right"} fontSize={20}
@@ -64,27 +64,29 @@ export default function Adjust({navigation}) {
                 <Text color={"white"} textAlign={"center"} fontSize={18} style={{fontFamily: 'Courgette'}}>With a
                     ruler, measure the width of the square below.</Text>
             </VStack>
-            <VStack space={5}>
-                <HStack space={2} alignItems={"center"} justifyContent={"center"}>
-                    <Box style={{width: 100, height: 100}} bg={"white"}></Box>
-                </HStack>
-                <HStack space={2} alignItems={"center"} justifyContent={"center"} color={"white"}>
-                    <TextInput style={{
-                        fontFamily: 'Courgette',
-                        color: "white",
-                        borderBottomWidth: 1,
-                        width: 130,
-                        borderBottomColor: 'white',
-                        fontSize: 16
-                    }} placeholder="Width (cm)" placeholderTextColor="white" keyboardType="numeric"
-                               value={inputValue}
-                               onChangeText={text => setInputValue(text)}/>
-                </HStack>
+            <VStack flex={1} justifyContent={"space-around"}>
+                <VStack space={5}>
+                    <HStack space={2} alignItems={"center"} justifyContent={"center"}>
+                        <Box style={{width: 100, height: 100}} bg={"white"}></Box>
+                    </HStack>
+                    <HStack space={2} alignItems={"center"} justifyContent={"center"} color={"white"}>
+                        <TextInput style={{
+                            fontFamily: 'Courgette',
+                            color: "white",
+                            borderBottomWidth: 1,
+                            width: 130,
+                            borderBottomColor: 'white',
+                            fontSize: 16
+                        }} placeholder="Width (cm)" placeholderTextColor="white" keyboardType="numeric"
+                                   value={inputValue}
+                                   onChangeText={text => setInputValue(text)}/>
+                    </HStack>
+                </VStack>
+                <TouchableOpacity onPress={() => storeData()}>
+                    <Text textAlign={"center"} fontSize={24} p={2} bg={"white"} w={40} margin={"auto"} borderRadius={10}
+                          color={"#46ACC2"} fontFamily={'Courgette'}>Next</Text>
+                </TouchableOpacity>
             </VStack>
-            <TouchableOpacity onPress={() => storeData()}>
-                <Text textAlign={"center"} fontSize={24} p={2} bg={"white"} w={40} margin={"auto"} borderRadius={10}
-                      color={"#46ACC2"} fontFamily={'Courgette'}>Next</Text>
-            </TouchableOpacity>
-        </VStack>
+        </Stack>
     )
 }
