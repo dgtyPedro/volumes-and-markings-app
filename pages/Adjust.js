@@ -35,11 +35,11 @@ export default function Adjust({navigation}) {
     const storeData = async () => {
         try {
             if(inputValue && inputValue > 0){
-                if(inputValue > 5){
-                    alert('The value provided is a little larger than expected, in conventional screens the square varies from 1 to 4cm in width. Be aware that adjusting the application incorrectly can lead to results that are far from reality.')
-                }
                 if(inputValue > 10){
                     return alert('The value entered is much larger than expected. Enter a smaller value.')
+                }
+                if(inputValue > 5){
+                    alert('The value provided is a little larger than expected, in conventional screens the square varies from 1 to 4cm in width. Be aware that adjusting the application incorrectly can lead to results that are far from reality.')
                 }
                 await AsyncStorage.setItem('@base_pxr', inputValue)
                 navigation.navigate('Format')
