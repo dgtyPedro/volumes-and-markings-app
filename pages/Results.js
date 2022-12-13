@@ -15,7 +15,7 @@ import {
     Box,
 } from "native-base";
 
-import {TextInput, Button, TouchableOpacity, View, Dimensions} from "react-native";
+import {TextInput, Button, TouchableOpacity, View, Dimensions, Alert} from "react-native";
 
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -30,9 +30,13 @@ const screen = Dimensions.get("screen");
 
 export default function Results({navigation}) {
     const [spacing, setSpacing] = useState(100);
+    const [volumeTotal, setVolumeTotal] = useState(100);
+
     useEffect(() => {
         const getSpacing = async() => {
             const spacing_rn = await AsyncStorage.getItem('@espacamento_rn')
+            const volume = await AsyncStorage.getItem('@volume_total')
+            Alert.alert("Result", `Total Volume: ${(parseFloat(volume)).toFixed(2)}ml`)
             setSpacing(parseInt(spacing_rn))
         }
         getSpacing()

@@ -21,7 +21,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import {TextInput, TouchableOpacity} from "react-native";
+import {TextInput, TouchableOpacity, Alert} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Cylinder({navigation}) {
@@ -36,16 +36,17 @@ export default function Cylinder({navigation}) {
             const litragem = volumeTotal * 1000
             const espacamentoirl = (altura * 0.05) / litragem
             if(espacamentoirl < 0.2){
-                return alert('The spacing between the marks is too small, the application was unable to render it. Measure a smaller container.')
+                return Alert.alert('Error', 'The spacing between the marks is too small, the application was unable to render it. Measure a smaller container.')
             }
             if(espacamentoirl < 0.4){
-                alert('The spacing between the marks is small, rendering problems may occur.')
+                Alert.alert('Warning', 'The spacing between the marks is small, rendering problems may occur.')
             }
             const espacamentorn = Math.round((espacamentoirl*100)/base_pxr)
+            await AsyncStorage.setItem('@volume_total', JSON.stringify(litragem))
             await AsyncStorage.setItem('@espacamento_rn', JSON.stringify(espacamentorn))
             navigation.navigate('Results')
         }else{
-            alert('Fill all values')
+            Alert.alert('Alert', 'Fill all values')
         }
     }
 

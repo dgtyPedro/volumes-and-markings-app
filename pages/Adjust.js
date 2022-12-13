@@ -18,7 +18,7 @@ import {
     Input,
 } from "native-base";
 
-import {TextInput, Button, TouchableOpacity} from "react-native";
+import {TextInput, Button, TouchableOpacity, Alert} from "react-native";
 
 import {Ionicons} from '@expo/vector-icons';
 import {AntDesign} from '@expo/vector-icons';
@@ -36,16 +36,16 @@ export default function Adjust({navigation}) {
         try {
             if(inputValue && inputValue > 0){
                 if(inputValue > 10){
-                    return alert('The value entered is much larger than expected. Enter a smaller value.')
+                    return Alert.alert('Error', 'The value entered is much larger than expected. Enter a smaller value.')
                 }
                 if(inputValue > 5){
-                    alert('The value provided is a little larger than expected, in conventional screens the square varies from 1 to 4cm in width. Be aware that adjusting the application incorrectly can lead to results that are far from reality.')
+                    Alert.alert('Warning', 'The value provided is a little larger than expected, in conventional screens the square varies from 1 to 4cm in width. Be aware that adjusting the application incorrectly can lead to results that are far from reality.')
                 }
                 await AsyncStorage.setItem('@base_pxr', inputValue)
                 navigation.navigate('Format')
             }
             else{
-                alert('Fill the width field')
+                Alert.alert('Alert', 'Fill the width field')
             }
         } catch (e) {
             // saving error
