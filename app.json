@@ -2,7 +2,7 @@
   "expo": {
     "name": "Measure Volume & Show Markings",
     "slug": "my-ruler",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/splash.png",
     "splash": {
@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/splash.png",
         "backgroundColor": "#46ACC2"
