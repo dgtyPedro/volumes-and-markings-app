@@ -21,7 +21,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import {TextInput, TouchableOpacity, Alert} from "react-native";
+import {TextInput, TouchableOpacity, Alert, PixelRatio} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Cylinder({navigation}) {
@@ -31,7 +31,33 @@ export default function Cylinder({navigation}) {
 
     const goToResults = async () => {
         if(diametro && diametro > 0 && altura && altura > 0){
-            const base_pxr = await AsyncStorage.getItem('@base_pxr')
+            const pixelRatio = PixelRatio.get();
+            const defaultPxr = PixelRatio.getPixelSizeForLayoutSize(100);
+            let resDpi;
+            switch (pixelRatio) {
+                case 0.75:
+                    resDpi = 120;
+                    break;
+                case 1:
+                    resDpi = 160;
+                    break;
+                case 1.5:
+                    resDpi = 240;
+                    break;
+                case 2:
+                    resDpi = 320;
+                    break;
+                case 3:
+                    resDpi = 480;
+                    break;
+                case 4:
+                    resDpi = 640;
+                    break;
+                default:
+                    resDpi = 300;
+                    break;
+            }
+            const base_pxr = (defaultPxr/resDpi)*2.54
             const volumeTotal = 3.14159265359 * ((diametro * 0.01)/2) * ((diametro * 0.01)/2) * (altura * 0.01)
             const litragem = volumeTotal * 1000
             const espacamentoirl = (altura * 0.05) / litragem

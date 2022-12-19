@@ -46,7 +46,7 @@ export default function Home({navigation}) {
             </VStack>
             <VStack mb={10} justifyContent={"center"} alignItems={"center"} borderRadius={10}>
                 {/*<Text textAlign="center" color="#303036" fontSize={30}>Medir Volume</Text>*/}
-                <TouchableOpacity onPress={() => navigation.navigate('Adjust')} margin={"auto"}
+                <TouchableOpacity onPress={() => navigation.navigate('Format')} margin={"auto"}
                                   style={{backgroundColor: "#46ACC2", width: 200, height: 200, display: "flex",
                                       justifyContent: "center", alignItems: "center", margin: "auto", textAlign: "center", borderRadius: 20}}>
                     <MaterialCommunityIcons name="cube-outline" color="white" size={70}/>

@@ -18,19 +18,42 @@ import {
     Input,
 } from "native-base";
 
-import {TextInput, Button, TouchableOpacity, Alert} from "react-native";
-
-import {Ionicons} from '@expo/vector-icons';
-import {AntDesign} from '@expo/vector-icons';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
-import {FontAwesome5} from '@expo/vector-icons';
-import {Entypo} from '@expo/vector-icons';
-import {MaterialIcons} from '@expo/vector-icons';
-import {useFonts} from "expo-font";
+import {TextInput, Button, TouchableOpacity, Alert, PixelRatio, Dimensions} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Adjust({navigation}) {
+    const { width, height } = Dimensions.get('window');
     const [inputValue, setInputValue] = useState(0);
+
+    useEffect(() => {
+        const pixelRatio = PixelRatio.get();
+        const defaultPxr = PixelRatio.getPixelSizeForLayoutSize(100);
+        let resDpi;
+        switch (pixelRatio) {
+            case 0.75:
+                resDpi = 120;
+                break;
+            case 1:
+                resDpi = 160;
+                break;
+            case 1.5:
+                resDpi = 240;
+                break;
+            case 2:
+                resDpi = 320;
+                break;
+            case 3:
+                resDpi = 480;
+                break;
+            case 4:
+                resDpi = 640;
+                break;
+            default:
+                resDpi = 300;
+                break;
+        }
+        const espacamento_rn = (defaultPxr/resDpi)*2.54
+    }, []);
 
     const storeData = async () => {
         try {

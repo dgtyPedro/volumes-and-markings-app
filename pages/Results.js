@@ -29,14 +29,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const screen = Dimensions.get("screen");
 
 export default function Results({navigation}) {
-    const [spacing, setSpacing] = useState(100);
-    const [volumeTotal, setVolumeTotal] = useState(100);
+    const [spacing, setSpacing] = useState(0);
 
     useEffect(() => {
         const getSpacing = async() => {
             const spacing_rn = await AsyncStorage.getItem('@espacamento_rn')
             const volume = await AsyncStorage.getItem('@volume_total')
-            Alert.alert("Result", `Total Volume: ${(parseFloat(volume)).toFixed(2)}ml`)
+            Alert.alert("Result", `Total Volume: ${(parseFloat(volume)).toFixed(2)}L`)
             setSpacing(parseInt(spacing_rn))
         }
         getSpacing()
@@ -47,7 +46,15 @@ export default function Results({navigation}) {
     if (!loaded) {
         return null;
     }
-
+    if(spacing === 0){
+        return (
+            <VStack bg="#46ACC2" flex={1} alignItems={"center"} justifyContent={"center"}>
+                <Text color={"white"} fontFamily='Courgette' fontSize={40}>
+                    Loading...
+                </Text>
+            </VStack>
+            )
+    }
     return (
         <VStack bg="#46ACC2" flex={1} flexDirection={"column-reverse"}>
             <HStack>
