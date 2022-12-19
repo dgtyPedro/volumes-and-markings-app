@@ -50,6 +50,9 @@ export default function Cylinder({navigation}) {
                 case 3:
                     resDpi = 480;
                     break;
+                case 3.5:
+                    resDpi = 640;
+                    break;
                 case 4:
                     resDpi = 640;
                     break;
